@@ -5,7 +5,6 @@ const formRoutes = require('./routes/form');
 
 const app = express();
 
-app.use(bodyParser.urlencoded({extended: false}));
 app.use('/form', formRoutes);
 
-app.listen(3000);
+app.listen(8080);
