@@ -1,7 +1,11 @@
-const http = require('http');
+const express = require('express');
+const bodyParser = require('body-parser');
 
-const server = http.createServer((req, res) => {
-    console.log(req);
-});
+const formRoutes = require('./routes/form');
 
-server.listen(3000);
+const app = express();
+
+app.use(bodyParser.urlencoded({extended: false}));
+app.use('/form', formRoutes);
+
+app.listen(3000);
