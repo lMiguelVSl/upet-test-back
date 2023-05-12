@@ -10,6 +10,7 @@ module.exports = class User {
 
     save() {
         //save user in data base
+        return 1;
     }
 
     fetchUser() {
