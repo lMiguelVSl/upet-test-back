@@ -13,7 +13,6 @@ exports.postUser = async (req, res, next) => {
     const password = req.body.password;
     const user = new User(name, lastName, phoneNumber, email, password);
     let userId = await user.save();
-
     res.status(201).json({
         userId: { id: userId}
     })
