@@ -12,7 +12,10 @@ exports.postUser = async (req, res, next) => {
     const email = req.body.email;
     const password = req.body.password;
     const user = new User(name, lastName, phoneNumber, email, password);
-    let userResult = await user.save();
+    let userResult;
+    await user.save()
+    .then(res => userResult = res.insertedId)
+    .catch(err => console.log('CATCH RES CONTROLLER', err));
     res.status(201).json({
         userResult: { id: userResult}
     })

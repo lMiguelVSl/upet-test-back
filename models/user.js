@@ -13,8 +13,6 @@ module.exports = class User {
     save() {
         const db = getDb();
         return db.collection('user').insertOne(this)
-        .then(res => console.log('RES SAVED', res))
-        .catch(err => console.log('error saving:', err));
     }
 
     fetchUser() {
