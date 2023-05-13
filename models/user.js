@@ -1,3 +1,5 @@
+const getDb = require('../util/database').getDb;
+
 module.exports = class User {
 
     constructor(name, lastName, phoneNumer, email, password) {
@@ -9,8 +11,10 @@ module.exports = class User {
     }
 
     save() {
-        //save user in data base
-        return 1;
+        const db = getDb();
+        return db.collection('user').insertOne(this)
+        .then(res => console.log('RES SAVED', res))
+        .catch(err => console.log('error saving:', err));
     }
 
     fetchUser() {

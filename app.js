@@ -2,7 +2,7 @@ const express = require('express');
 const bodyParser = require('body-parser');
 
 const formRoutes = require('./routes/form');
-const mongoConnect = require('./util/database');
+const mongoConnect = require('./util/database').mongoConnect;
 const app = express();
 
 app.use(bodyParser.json());
@@ -16,7 +16,6 @@ app.use((req, res, next) => {
 
 app.use('/form', formRoutes);
 
-mongoConnect(client => {
-    console.log('CLIENT CONECT APP.JS', client);
+mongoConnect(() => {
     app.listen(8080);
 });

@@ -12,8 +12,8 @@ exports.postUser = async (req, res, next) => {
     const email = req.body.email;
     const password = req.body.password;
     const user = new User(name, lastName, phoneNumber, email, password);
-    let userId = await user.save();
+    let userResult = await user.save();
     res.status(201).json({
-        userId: { id: userId}
+        userResult: { id: userResult}
     })
 };
