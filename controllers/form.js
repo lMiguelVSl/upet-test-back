@@ -1,5 +1,5 @@
 const User = require("../models/user");
-const validateUser = require('../helpers/data-validation').validateUser;
+const {validateUser} = require('../helpers/data-validation');
 
 exports.getUser = async (req, res, next) => {
     let user = new User();
@@ -7,13 +7,11 @@ exports.getUser = async (req, res, next) => {
     await user.fetchUser(req.params.id)
         .next()
         .then(user => {
-            console.log('USER THEN FETCH', user)
             response = user;
         })
         .catch(err => {
             console.log('ERROR GET USER DB');
         });
-    console.log('USER BEFORE RESPONSE', response);
     res.status(200).json({
         user: response
     });

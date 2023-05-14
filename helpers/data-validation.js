@@ -1,4 +1,4 @@
-export const validateUser = (user) => {
+exports.validateUser = (user) => {
     if (user.name === '') return false;
     if (user.lastName === '') return false;
     if (!isValidEmail(user.email)) return false;
