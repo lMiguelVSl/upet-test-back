@@ -1,3 +1,5 @@
+const { ObjectId } = require('mongodb');
+
 const getDb = require('../util/database').getDb;
 
 module.exports = class User {
@@ -15,7 +17,9 @@ module.exports = class User {
         return db.collection('user').insertOne(this)
     }
 
-    fetchUser() {
-        //get user after being saved
+    fetchUser(id) {
+        const db = getDb();
+        const userId = new ObjectId(id);
+        return db.collection('user').find({ _id: userId });
     }
 }
