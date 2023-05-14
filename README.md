@@ -26,7 +26,7 @@ with these changes you should be able to excecute 'npm start' into the directory
 
 if you wan to test the endpoint with postman these are the urls to test:
 
-method POST:   http://localhost:4200/form/postUser
+method POST:   http://localhost:8080/form/postUser
 go to body tab select war and JSON format.
 test posting this user.
 
@@ -40,7 +40,7 @@ test posting this user.
 
 with the response take the id string and pu it into the url, replace ":id" with the id
 
-method GET :   http://localhost:4200/form/getUser/:id
+method GET :   http://localhost:8080/form/getUser/:id
 
 
 
