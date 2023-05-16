@@ -46,4 +46,19 @@ to setup the test you should install these dependencies:
 npm install --save-dev mocha chai
 after the installation with the command: npm test the unit tests are going to be excecuted.
 
+to run the express server with docker:
+you should have docker desktop in your machine.
+first execute the next command to create the docker image: => docker build -t mavs/upet-test-back .
 
+now in your cmd you can check the image with the next command => docker images
+
+you should see the image create with the name mavs/upet-test-back
+
+next, create the container with the nex command => docker run -p 80:8080 -d mavs/upet-test-back 
+this command will create and execute the container in daemond mode so let's test it.
+
+execute the next command after have one user already create in the database.
+
+docker exec <container_name_or_id> curl http://localhost:8080/form/getUser/<user-id-from-mongoDB> 
+
+and you can see the endpoint answer in your cmd
