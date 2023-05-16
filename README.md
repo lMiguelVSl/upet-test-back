@@ -42,6 +42,8 @@ with the response take the id string and pu it into the url, replace ":id" with 
 
 method GET :   http://localhost:8080/form/getUser/:id
 
-
+to setup the test you should install these dependencies: 
+npm install --save-dev mocha chai
+after the installation with the command: npm test the unit tests are going to be excecuted.
 
 
