@@ -16,8 +16,6 @@ into you directory to have the repository:
 
  - git clone https://github.com/lMiguelVSl/upet-test-back.git
  - npm intall
- - npm i --save express
-- npm install --save body-parser
 
 go to src/util/database.js en the line 6 you should put your mongodb atlass cluster to connect to your database
 
